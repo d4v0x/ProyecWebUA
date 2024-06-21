@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    
+    gsap.registerPlugin(ScrollTrigger);
 
     document.querySelectorAll('section').forEach(section => {
         gsap.from(section, {
