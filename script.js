@@ -36,10 +36,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const btn = document.querySelector('.btnfos-5');
     if (btn) {
         setInterval(() => {
-            btn.classList.add('hover');
-            setTimeout(() => {
-                btn.classList.remove('hover');
-            }, 1250);
-        }, 5000);
+            gsap.fromTo(btn, 
+                { scale: 1 }, 
+                { 
+                    scale: 1.2, 
+                    duration: 1.5, 
+                    ease: "power1.inOut", 
+                    yoyo: true, 
+                    repeat: 1 
+                }
+            );
+        }, 10000); // Cada 10 segundos
     }
+
+    // Mantener el efecto hover existente
+    const hoverEffect = () => {
+        btn.classList.add('hover');
+        setTimeout(() => {
+            btn.classList.remove('hover');
+        }, 1250);
+    };
+
+    btn.addEventListener('mouseenter', hoverEffect);
+
+    // Animaciones de los títulos
+    gsap.from(".main-title", { 
+        duration: 2.6, 
+        y: 50, 
+        opacity: 0, 
+        ease: "power1.out" 
+    });
+
+    gsap.from(".subtitle", { 
+        duration: 3.5, 
+        opacity: 0, 
+        delay: 2, 
+        ease: "power1.out" 
+    });
 });
