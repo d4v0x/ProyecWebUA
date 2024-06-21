@@ -272,3 +272,42 @@ ul li::before {
         font-size: 4rem;
     }
 }
+
+.scroll-container {
+    overflow: hidden;
+}
+
+.scroll-container .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    will-change: transform;
+    flex: 1 0 100%; /* Cada sección ocupa el 100% del ancho del contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 18px;
+}
+
+.scroll-down .arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
