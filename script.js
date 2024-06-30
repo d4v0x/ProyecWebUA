@@ -1,6 +1,7 @@
+// Espera a que todo el contenido del documento haya sido completamente cargado y analizado
 document.addEventListener('DOMContentLoaded', (event) => {
     gsap.registerPlugin(ScrollTrigger);
-
+// Aplica una animación a cada sección cuando entra en la vista
     document.querySelectorAll('section').forEach(section => {
         gsap.from(section, {
             opacity: 0,
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         });
     });
-
+    // Añade un scroll suave al hacer clic en los enlaces de navegación
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         });
     });
-
+    // Añade o quita la clase 'active' a los enlaces de navegación según la sección visible
     window.addEventListener('scroll', () => {
         let fromTop = window.scrollY;
 
@@ -49,9 +50,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         });
     });
-
+    // Selecciona el botón con la clase 'btnfos-5'
     const btn = document.querySelector('.btnfos-5');
     if (btn) {
+        // Aplica una animación de escala al botón cada 10 segundos
         setInterval(() => {
             gsap.fromTo(btn, 
                 { scale: 1 }, 
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             btn.classList.remove('hover');
         }, 1250);
     };
-
+    // Añade el efecto hover al pasar el ratón sobre el botón
     btn.addEventListener('mouseenter', hoverEffect);
 
     // Animaciones de los títulos
